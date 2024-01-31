@@ -1,0 +1,14 @@
+div {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    height: 90vh;
+}
+
+img {
+    width: 200px;
+    height: 60px;
+    filter: drop-shadow( 5px 5px 5px black);
+}
