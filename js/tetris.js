@@ -1,6 +1,4 @@
 /*
-    To create a game is important the game loop, then I use the function requestAnimationFrame() with the update function.
-
     In this space I defined all the functions that I need and I use.
 */
 
@@ -28,11 +26,38 @@ function draw () {
             }
         });
     });
-    
+
+    // Draw the piece in the board
+    pieces.forEach((column, j) => {
+        column.forEach((row, i) => {
+            // Validates whether the pixel to be drawn is an occupied pixel (1) or not (0).
+            if ( row == 1) {
+                context.fillStyle = "red";
+                context.fillRect ( WIDTH/2 - pieces[0].length/2, 0, 1, 1 );
+            }
+        });
+        
+    });  
 }
 
+// Activate the events to the canvas
+document.addEventListener("keydown", event =>{
+    switch (event.key){
+        case "ArrowRight":
+            console.log("Mover la ficha hacia derecha");
+            break;
+        case "ArrowDown":
+            console.log("Mover la ficha hacia abajo");
+            break;
+        case "ArrowLeft":
+            console.log("Mover la ficha hacia izquierda");
+            break;
+    }
+
+});
+
 /*
-    To start with this project it is important to reference the HTML element canvas because this is the drawing space for the game.
+    End of the definition of functions.
 */
 
 // Reference the canvas element.
@@ -42,7 +67,7 @@ let context = canvas.getContext("2d");
 // Define the size of the board game.
 const BLOCK_SIZE = 20;
 const WIDTH = 15;
-const HEIGHT = 25;
+const HEIGHT = 22;
 
 // Stablish the canvas dimensions.
 canvas.width = WIDTH * BLOCK_SIZE;
@@ -72,10 +97,13 @@ let board = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1]
+];
+
+// Define the pieces
+let pieces = [
+    [1, 1],
+    [1, 1]
 ];
 
 // Call the function update() to start the game.
