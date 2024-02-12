@@ -1,7 +1,5 @@
 import { Piece } from './piece.js';
-/*
-    In this space I defined all the functions that I need and I use.
-*/
+
 
 // Function to update a frame in the game.
 function update () {
@@ -62,7 +60,9 @@ function solidify() {
     // Put the piece in the board
     for (let j = piece.getPositionY; j < piece.getPositionY + piece.getSize.length; j++) {
         for (let i = piece.getPositionX; i < piece.getPositionX + piece.getSize[0].length; i++) {
-               board[j][i] = 1;        
+            if (piece.getSize[j-piece.getPositionY][i-piece.getPositionX] == 1) {
+                board[j][i] = 1;   
+            }    
         }
     }
     // Create a new piece
@@ -89,12 +89,9 @@ document.addEventListener("keydown", event =>{
             collision (preview);
             break;
     }
-
 });
 
-/*
-    In this space I defined all the variables and constant.
-*/
+
 
 // Reference the canvas element.
 let canvas = document.getElementById("myCanvas");
