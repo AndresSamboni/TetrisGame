@@ -32,6 +32,10 @@ export class Piece {
                 [1],
                 [1]
             ],
+            [
+                [1, 1, 0],
+                [0, 1, 1]
+            ]
         ];
         this.#size = this.#opSize[Math.floor( Math.random()*(this.#opSize.length))];
         this.#opColor = ['yellow', 'green', 'blue', 'red'];

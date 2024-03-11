@@ -87,6 +87,13 @@ function solidify() {
     }
     // Create a new piece
     piece = new Piece(WIDTH);
+    // Check Game Over
+    let preGameOver = [piece.getPositionX, piece.getPositionY];
+    if (collision(preGameOver)){
+        window.alert('Game Over');
+        board.forEach(row=>{row.fill(0);});
+        score.innerHTML = `Score: ${scoreBase}`;
+    }
 }
 
 // Activate the events to the canvas
