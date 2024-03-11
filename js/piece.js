@@ -11,7 +11,7 @@ export class Piece {
     constructor(WIDTH) {
         this.#position = {
             x : Math.floor( Math.random()*(WIDTH - 3)),
-            y : 20
+            y : 1 
         };
         this.#opSize = [
             [

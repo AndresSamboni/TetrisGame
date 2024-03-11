@@ -12,3 +12,12 @@ img {
     height: 60px;
     filter: drop-shadow( 5px 5px 5px black);
 }
+
+h2 {
+    margin: 0px;
+    padding: 0px;
+    width: 200px;
+    height: 60px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
